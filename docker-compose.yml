@@ -15,5 +15,5 @@ services:
     stdin_open: true
     tty: true
     devices:
-      - "/dev/net/tun:/dev/net/tun"
-    command: /bin/ash
+      - /dev/net/tun
+    command: /bin/bash

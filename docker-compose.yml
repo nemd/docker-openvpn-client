@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  openvpn-client:
+    build:
+      context: .
+    image: openvpn-client
+    cap_add:
+      - net_admin
+    read_only: true
+    privileged: true
+    tmpfs:
+      - /tmp
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    devices:
+      - "/dev/net/tun:/dev/net/tun"
+    command: /bin/ash

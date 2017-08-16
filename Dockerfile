@@ -22,6 +22,6 @@ RUN export DEBIAN_FRONTEND='noninteractive' && \
 WORKDIR /etc/openvpn
 ADD https://torguard.net/downloads/OpenVPN-TCP.zip /etc/openvpn
 RUN unzip /etc/openvpn/OpenVPN-TCP.zip
-RUN	mv OpenVPN-TCP/* /etc/openvpn/ && rm -rf OpenVPN-TCP && rm -f OpenVPN-TCP.zip
-RUN rm -f TorGuard.Costa*
-RUN	ls *.ovpn | sed -e 'p;s/ovpn$/conf/' | xargs -n2 mv
+RUN mv OpenVPN-TCP/* /etc/openvpn/
+RUN rm -f /etc/openvpn/TorGuard.Costa*
+RUN ls *.ovpn | sed -e 'p;s/ovpn$/conf/' | xargs -n2 mv

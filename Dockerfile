@@ -4,7 +4,7 @@ MAINTAINER nemd <michal@reaper.pl>
 
 RUN export DEBIAN_FRONTEND='noninteractive' && \
     apt-get update -qq && \
-    apt-get install -qqy --no-install-recommends iptables openvpn procps \
+    apt-get install -qqy --no-install-recommends iptables openvpn procps unzip \
                 $(apt-get -s dist-upgrade|awk '/^Inst.*ecurity/ {print $2}') &&\
     echo '#!/usr/bin/env bash' >/sbin/resolvconf && \
     echo 'conf=/etc/resolv.conf' >>/sbin/resolvconf && \

@@ -5,6 +5,8 @@ services:
     build:
       context: .
     image: openvpn-client
+    env_file:
+      - .env
     cap_add:
       - net_admin
     read_only: false

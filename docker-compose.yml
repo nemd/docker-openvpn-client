@@ -16,4 +16,4 @@ services:
     tty: true
     devices:
       - /dev/net/tun
-    command: /bin/bash
+    command: /entrypoint.sh

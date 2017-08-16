@@ -26,3 +26,5 @@ RUN mv OpenVPN-TCP/* /etc/openvpn/
 RUN rm -f /etc/openvpn/TorGuard.Costa*
 RUN ls *.ovpn | sed -e 'p;s/ovpn$/conf/' | xargs -n2 mv
 RUN sed -i 's/auth-user-pass/auth-user-pass \/etc\/openvpn\/auth\.txt/' *.conf
+
+ADD entrypoint.sh / && chmod +x /entrypoint.sh

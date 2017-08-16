@@ -10,6 +10,6 @@ ADD https://torguard.net/downloads/OpenVPN-TCP.zip /etc/openvpn
 RUN unzip /etc/openvpn/OpenVPN-TCP.zip
 RUN	mv OpenVPN-TCP/* .
 RUN	ls *.ovpn | sed -e 'p;s/.ovpn$/.conf/' | xargs -n2 mv
-RUN	rm -rf OpenVPN-TCP OpenVPN-TCP.zip
+# RUN	rm -rf OpenVPN-TCP OpenVPN-TCP.zip
 
 CMD /bin/ash
